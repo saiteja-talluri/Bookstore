@@ -14,7 +14,8 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
 ● Every​ ​user​ ​can​ ​read,rate​ ​and​ ​review​ ​the​ ​books.
 ● User​ ​can​ ​not​ ​only​ ​read​ ​but​ ​can​ ​also​ ​upload/advertise​ ​his​ ​own​ ​books​ ​or​ ​materials.
 ● Users​ ​can​ ​follow​ ​uploaders​ ​and​ ​also​ ​chat​ ​with​ ​them​ ​via​ ​a​ ​simple​ ​chat​ ​box.
-● Group​ ​of​ ​users​ ​can​ ​also​ ​form​ ​a​ ​community​ ​depending​ ​on​ ​their​ ​interests.​ ​The​ ​materials shared​ ​in​ ​the​ ​community​ ​are​ ​accessible​ ​to​ ​everyone​ ​in​ ​it.
+● Group​ ​of​ ​users​ ​can​ ​also​ ​form​ ​a​ ​community​ ​depending​ ​on​ ​their​ ​interests.​ ​
+  The​ ​materials shared​ ​in​ ​the​ ​community​ ​are​ ​accessible​ ​to​ ​everyone​ ​in​ ​it.
 ```
 
 ## MOTIVATION
