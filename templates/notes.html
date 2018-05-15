@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul> 
+{% for doc in d %}
+    <li> <a href="{% url 'uploader' pk=doc.uploader %}">{{doc.uploader}}</a> has uploaded <a href="{% url 'bookpage' pk=doc.pk %}">{{doc.title }}</a>
+{% endfor %}
+</ul>
+<h2>read requests</h2>
+{% for doc,li in rplist %}
+  {% for l in li %}
+  <a href="{% url 'uploader' pk=l.username %}">{{l.username}}</a> sent a request to read <a href="{% url 'bookpage' pk=doc.pk %}">{{ doc.title }}</a> uploaded by you
+<a href="{% url 'acceptread' pk=l.pk pk1=doc.pk %}">accept</a>
+  {% endfor %}
+{% endfor %}
+
+{% endblock %}
+
+<a href="{% url 'uploader' pk=l.username %}">{{l.username}} sent a request to read <a href="{% url 'bookpage' pk=doc.pk %}">{{ doc.title }}</a> uploaded by you

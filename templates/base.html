@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <title>Book Store</title>
+    <meta http-equiv="content-type" content="text/html">
+    <meta charset="utf-8">
+    <meta name="description" content="Book Store">
+    <meta name="keywords"    content="Book Store,Book,Store,Author,Community">
+    <meta name="author"      content="The Brogrammers">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <script src="{% static "js/jquery-1.12.2.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "channels/js/websocketbridge.js" %}" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700'rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <style>
+      body {
+    position: relative;
+    overflow-x: hidden;
+    font: 400 15px/1.8 Lato, sans-serif;
+      color: #777;
+      {% block colr %}{% endblock %}
+}
+/*body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #777;
+  }*/
+  input[type=text], input[type=password] {
+    width: 70%;
+    padding: 2px 10px;
+    margin: 1px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.js .to-animate,
+.js .to-animate-2,
+.js .single-animate {
+  opacity: 0;
+}
+
+body,
+html { height: 100%;}
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus {background-color: transparent;}
+
+.container {
+      padding: 80px 120px;
+}
+
+ #menu ul{
+  list-style: none;
+}
+#menu li {
+    display:inline-block;
+    margin-right: 50px; 
+}
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 220px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    left: 220px;
+    width: 0;
+    height: 100%;
+    margin-left: -220px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #1a1a1a;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 220px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding-top: 0px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -220px;
+    width: 100%;
+}
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 220px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    position: relative; 
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-nav li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 3px;
+    background-color: #1c1c1c !important;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+.sidebar-nav li:first-child a {
+    color: #fff !important;
+    background-color: #1a1a1a !important;
+}
+.sidebar-nav li:nth-child(2):before {
+    background-color: #ec1b5a !important;   
+}
+.sidebar-nav li:nth-child(3):before {
+    background-color: #79aefe !important;   
+}
+.sidebar-nav li:nth-child(4):before {
+    background-color: #314190 !important;   
+}
+.sidebar-nav li:nth-child(5):before {
+    background-color: #279636 !important;   
+}
+.sidebar-nav li:nth-child(6):before {
+    background-color: #7d5d81!important;   
+}
+.sidebar-nav li:nth-child(7):before {
+    background-color: #ead24c !important;   
+}
+.sidebar-nav li:nth-child(8):before {
+    background-color: #2d2366 !important;   
+}
+.sidebar-nav li:nth-child(9):before {
+    background-color: #35acdf !important;   
+}
+.sidebar-nav li:nth-child(10):before {
+    background-color: #35acdf !important;   
+}
+.sidebar-nav li:nth-child(11):before {
+    background-color: #35acdf !important;   
+}
+
+.sidebar-nav li:hover:before,
+.sidebar-nav li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li a {
+    display: block;
+    color: #ddd !important;
+    text-decoration: none;
+    padding: 10px 15px 10px 30px;    
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus,
+.sidebar-nav li.open a:hover,
+.sidebar-nav li.open a:active,
+.sidebar-nav li.open a:focus{
+    color: #fff !important;
+    text-decoration: none;
+    background-color: transparent !important;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 20px;
+    line-height: 44px;
+}
+.sidebar-nav .dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    background-color: #222 !important;
+    box-shadow: none;
+}
+
+.hamburger {
+  position: fixed;
+  top: 7px;  
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+  background: transparent !important;
+  border: none;
+}
+.hamburger:hover,
+.hamburger:focus,
+.hamburger:active {
+  outline: none;
+}
+.hamburger.is-closed:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff !important;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom,
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom {
+  background-color: #1a1a1a;
+}
+.hamburger.is-closed .hamb-top { 
+  top: 5px; 
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed .hamb-middle {
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger.is-closed .hamb-bottom {
+  bottom: 5px;  
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed:hover .hamb-top {
+  top: 0;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover .hamb-bottom {
+  bottom: 0;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  background-color: #1a1a1a;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-bottom {
+  top: 50%;
+  margin-top: -2px;  
+}
+.hamburger.is-open .hamb-top { 
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open .hamb-middle { display: none; }
+.hamburger.is-open .hamb-bottom {
+  -webkit-transform: rotate(-45deg);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(250,250,250,.8);
+    z-index: 1;
+}
+
+
+/* -----------------------------------  Start of Navbar top styling  ------------------------------------------ */
+.header1{
+  margin-top: 0px;
+  margin-bottom: -5px;
+  /*z-index:1;*/
+  height: 90%;
+  width:100%;
+  top: 0;
+  bottom:10px;
+  padding-bottom: 0px;
+  font-family: Montserrat, sans-serif;
+  border: 0;
+  font-size: 12px !important;
+  letter-spacing: 4px;
+  opacity: 1;
+  /*position:absolute;*/
+}
+.header1 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#e6e6ff;
+}
+
+.header1 li {
+    float: right;
+}
+
+.header1 li a {
+    display: inline-block;
+    color: black !important;
+    text-align: center;
+    padding: 12px 16px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.header1-brand{
+  padding-left: 10px;
+  padding-right:35%;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px !important;
+  text-align: center;
+}
+
+.header1 li a:hover {
+    color: #ff6600 !important;
+}
+
+.header1 li.active a {
+    color: #ff6600 !important;
+    background-color: #29292c !important;
+}
+
+.header1 .dropdown-menu li a {
+      color: #000 !important;
+}
+.header1 .dropdown-menu li a:hover {
+      background-color: red !important;
+}
+
+/* -----------------------------------  End of Navbar top Styling  ------------------------------------------ */
+
+/* ------------------------------------ Start of Book Carousel Styling ---------------------------------------*/
+
+.col-item
+{
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    background: #FFF;
+}
+.col-item .photo img
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.col-item .info
+{
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 1px;
+}
+
+.col-item:hover .info {
+    background-color: #F5F5DC;
+}
+.col-item .price
+{
+    /*width: 50%;*/
+    float: left;
+    margin-top: 5px;
+}
+
+.col-item .price h5
+{
+    line-height: 20px;
+    margin: 0;
+}
+
+.price-text-color
+{
+    color: #219FD1;
+}
+
+.col-item .info .rating
+{
+    color: #777;
+}
+
+.col-item .rating
+{
+    /*width: 50%;*/
+    float: left;
+    font-size: 17px;
+    text-align: right;
+    line-height: 52px;
+    margin-bottom: 10px;
+    height: 52px;
+}
+
+.col-item .separator
+{
+    border-top: 1px solid #E1E1E1;
+}
+
+
+.col-item .separator p
+{
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.col-item .separator p i
+{
+    margin-right: 0px;
+}
+.col-item .btn-add
+{
+    width: 50%;
+    float: left;
+}
+
+.col-item .btn-add
+{
+    border-right: 1px solid #E1E1E1;
+}
+
+.col-item .btn-details
+{
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+}
+.controls
+{
+    margin-top: 20px;
+}
+[data-slide="prev"]
+{
+    margin-right: 10px;
+}
+
+.btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+  
+  button {
+  
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      padding:15px;
+      background-color: #2d2d30;
+      border: 0;
+      color:white;
+      font-size: 12px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+}
+a.button{
+ background-color:#cc0000;
+ border:1px solid #660000;
+ border-radius:5px;
+ color:#fff;
+ margin-right:10px;
+ padding:5px 5px 5px 5px;
+ text-decoration: none;
+}
+
+
+/* ------------------------------------ End of Book Carousel Styling ---------------------------------------*/
+
+#top-home {
+  background-image: url('{% static "images/bg_image1.jpg" %}');
+  background-color: transparent;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  width: 100%;
+  background-color: #52d3aa;
+  color: #fff;
+  overflow: hidden;
+}
+#top-home .gradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: .65;
+  -webkit-backface-visibility: hidden;
+  background-color: #52d3aa;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0, #3f95ea), color-stop(1, #52d3aa));
+  background-image: -webkit-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
+  background-image: repeating-linear-gradient(to bottom right, #3f95ea 0%, #52d3aa 100%);
+  background-image: -ms-repeating-linear-gradient(top left, #3f95ea 0%, #52d3aa 100%);
+}
+#top-home, #top-home .text-wrap {
+  height: 570px;
+}
+#top-home .text-wrap {
+  display: table;
+  width: 100%;
+  position: relative;
+  z-index: 4;
+}
+#top-home .text-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+#top-home .text-inner a {
+  color: white;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+#top-home .text-inner a:hover, #top-home .text-inner a:active, #top-home .text-inner a:focus {
+  text-decoration: none;
+  color: white;
+  border-bottom: 1px dashed white;
+}
+#top-home .text-inner h1 {
+  font-size: 50px;
+  color: white;
+  margin: 0 0 20px 0;
+}
+#top-home .text-inner h2 {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+</style>
+    <script type="text/javascript">
+      $(document).ready(function () {
+  var trigger = $('.hamburger'),
+      overlay = $('.overlay'),
+     isClosed = false;
+
+    trigger.click(function () {
+      hamburger_cross();      
+    });
+
+    function hamburger_cross() {
+
+      if (isClosed === true) {          
+        overlay.hide();
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {   
+        overlay.show();
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+  }
+
+    var homeAnimate = function() {
+    if ( $('#top-home').length > 0 ) {  
+
+      $('#top-home').waypoint( function( direction ) {
+                    
+        if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+
+
+          setTimeout(function() {
+            $('#top-home .to-animate').each(function( k ) {
+              var el = $(this);
+              
+              setTimeout ( function () {
+                el.addClass('fadeInUp animated');
+              },  k * 20, 'easeInOutExpo' );
+              
+            });
+          }, 20);
+
+          
+          $(this.element).addClass('animated');
+            
+        }
+      } , { offset: '100%' } );
+
+    }
+  };
+  homeAnimate();
+  
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });  
+});
+    </script>
+</head>
+
+
+<body id="myPage" data-spy="scroll" data-target=".sidebar-nav" data-offset="50">
+  <div id="wrapper">
+  <div id="page-content-wrapper">
+        <div class="overlay"></div>
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand"> <a href="{% url 'home' %}"> BOOK STORE </a> </li>
+                {%block navbar-content %}
+                {% endblock %}
+                <!--<li> <a href="#suggestions"> SUGGESTIONS </a> </li>-->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> UPLOADS <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header"></li>
+                    <li><a href="{% url 'upfile' %}">Upload New Book</a></li>
+                    {%block navbaru-content %}
+                    {% endblock %}
+                    <!--<li><a href="#youruploads">Your Uploads</a></li>-->
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">COMMUNITIES <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header"></li>
+                    <!--<li><a href="#">Owned Communities</a></li>-->
+                    {%block navbar1-content %}
+                    {% endblock %}
+                    <li><a href="{% url 'jcommunities' %}">Joined Communtites</a></li>
+                    <li><a href="{% url 'ocommunities' %}">Other Communities</a></li>
+                    <li><a href="{% url 'community' %}"> Create Communtity</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> ADVERTISE <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header"></li>
+                    <li><a href="{% url 'advertise' %}">Advertise</a></li>
+                    <li><a href="#yourads">Your Ads</a></li>
+                  </ul>
+                </li>
+                <li> <a href="{% url 'notes' %}"> NOTIFICATIONS </a> </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> SETTINGS <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header"></li>
+                    <li><a href="{% url 'interests' %}">Interests</a></li>
+                    <li><a href="{% url 'editprofile' %}">Edit Profile</a></li>
+                    <li><a href="{% url 'reset' %}">Change Password</a></li>
+                  </ul>
+                </li>
+                
+            </ul>
+        </nav>
+        <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+          <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+        </button>
+        <div class="header1">
+           <ul>
+            <li><a href="{% url 'search' %}"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li><a href="{% url 'logout' %}">LOG OUT</a></li>
+            <li><a href="{% url 'notes' %}">NOTIFICATIONS</a></li>
+            <li><a href="{% url 'upfile' %}">UPLOAD</a></li>
+            <li><a href="http://127.0.0.1:8000/chat">CHATS</a></li>
+            <li class="header1-brand"><a href="{% url 'home' %}">BOOK STORE</a></li>
+          </ul>
+    </div>
+    <!--<div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <div id="carouselHome" class="carousel slide carousel-fade">
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="images/image1.jpg" width="1200">     
+            </div>
+
+            <div class="item">
+              <img src="images/image2.jpg" width="1200">
+            </div>
+          
+            <div class="item">
+              <img src="images/image3.jpg" width="1200">    
+          </div>
+
+          <div class="item">
+              <img src="images/image4.jpg" width="1200">    
+          </div>
+
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-9">
+                    <h3>
+                        Carousel Product Cart Slider</h3>
+                </div>
+                <div class="col-md-3">
+                    <div class="controls pull-right hidden-xs">
+                        <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example" data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example" data-slide="next"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Sample Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $199.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Product Example</h5>
+                                                <h5 class="price-text-color">
+                                                    $249.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Next Sample Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $149.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Sample Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $199.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Product with Variants</h5>
+                                                <h5 class="price-text-color">
+                                                    $199.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Grouped Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $249.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Product with Variants</h5>
+                                                <h5 class="price-text-color">
+                                                    $149.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Product with Variants</h5>
+                                                <h5 class="price-text-color">
+                                                    $199.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-9">
+                    <h3>
+                        Carousel Product Cart Slider</h3>
+                </div>
+                <div class="col-md-3">
+                    <div class="controls pull-right hidden-xs">
+                        <a class="left fa fa-chevron-left btn btn-primary" href="#carousel-example-generic" data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-primary" href="#carousel-example-generic" data-slide="next"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Sample Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $199.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Product Example</h5>
+                                                <h5 class="price-text-color">
+                                                    $249.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Next Sample Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $149.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Product with Variants</h5>
+                                                <h5 class="price-text-color">
+                                                    $199.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Grouped Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $249.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="http://placehold.it/350x260" class="img-responsive" alt="a">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Product with Variants</h5>
+                                                <h5 class="price-text-color">
+                                                    $149.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    {% block extra_body %}{% endblock %}
+    {% block extra_js %}{% endblock %}
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'search' %}"> SEARCH DOCUMENT</a>
+  <div class="container">
+            <h2>Search Ads</h2>
+            <div style="width:50%">
+                <form method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    {% for error in filter.form.non_field_errors %}
+                    <div class="form-group has-errors text-danger small">
+                        {{error}}
+                    </div>
+                    {% endfor %}
+                    {% for field in filter.form %}
+                    <div class="form-group has-errors text-danger small">
+                        {{field.errors}}
+                    </div>
+                    <div class="form-group has-errors text-danger small">
+                    </div>
+                    <div class="form-group">
+                      {{ field.label_tag }}<br>
+                        {{field}}
+                    </div>
+                    {% endfor %}
+                    <button class="btn btn-primary" type="submit" style="width:30%">Search</button>
+            </div>
+            </form>
+        </div>
+<br> <br>
+{% if le == 0 %}
+    not yet searched
+{% elif filter.qs.count == 0 %}
+	no searches found
+{% else %}
+    <div id="menu">
+    <ul>
+  	{% for ad in filter.qs %}
+    	<li>
+  			<div>
+        	<p>
+        	<img src="{{ad.image.url}}" alt="" style="width:100px;height:100px;"><br>
+        	author: <a href="{% url 'author' pk=ad.author %}">{{ad.author}}</a><br>
+          genre: <a href="{% url 'genre' pk=ad.genre %}">{{ad.genre}}</a><br>
+          title: <a href="{% url 'adpage' pk=ad.pk %}">{{ad.title }}</a><br>
+          uploader: <a href="{% url 'uploader' pk=ad.uploader %}">{{ad.uploader}}</a>
+        </p>
+  			</div>
+    	</li>
+  	{% endfor %}
+  	</ul>
+  </div>
+{% endif %}
+{% endblock %}

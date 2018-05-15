@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div>
+        <p>
+        <img src="{{ad.image.url}}" alt="" style="width:100px;height:100px;"><br>
+          author: <a href="{% url 'author' pk=ad.author %}">{{ad.author}}</a><br>
+          genre: <a href="{% url 'genre' pk=ad.genre %}">{{ad.genre}}</a><br>
+          title: <a href="{% url 'adpage' pk=ad.pk %}">{{ad.title }}</a><br>
+          uploader: <a href="{% url 'uploader' pk=ad.uploader %}">{{ad.uploader}}</a><br>
+        </p>
+{% if ad.user != user %}
+this is just an advertisement . no soft copy is available .
+chat with the to borrow the hard copy form him<br>
+<a href="{% url 'adpage' pk=ad.pk %}">chat</a><br>
+{% endif %}
+
+{% endblock %}

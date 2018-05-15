@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br> <br>
+<div id="menu">
+<ul>
+
+  {% for object in docs %}
+    <li>
+        <div>
+          <p>
+          <img src="{{object.image.url}}" alt="" style="width:100px;height:100px;"><br>
+          author: <a href="{% url 'author' pk=object.author %}">{{object.author}}</a><br>
+          genre: <a href="{% url 'genre' pk=object.genre %}">{{object.genre}}</a><br>
+          title: <a href="{% url 'bookpage' pk=object.pk %}">{{ object.title }}</a>
+        </p>
+          rating: {{object.rating}}<br>
+          no of ratings: {{object.no_ratings}}<br> 
+        </div>
+    </li>
+{% endfor %}
+</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load staticfiles%}
+
+{% block colr %}
+   background-image:url('{% static "images/arrival.png" %}');
+{% endblock %}
+{% block content %}
+	
+	<br><br>
+	<div class="container" style="background-color: white">
+	<center>
+    <h1>INTERESTS</h1></center>
+    <form method="POST" class="post-form" >{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    <br>
+    </div></div>
+{% endblock %}
+

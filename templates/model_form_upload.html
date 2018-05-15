@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container" ><center>
+            <h1>UPLOAD DOCUMENT</h1></center><br>
+            <div style="width:50%">
+                <form method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    {% for error in form.non_field_errors %}
+                    <div class="form-group has-errors text-danger small">
+                        {{error}}
+                    </div>
+                    {% endfor %}
+                    {% for field in form %}
+                    <div class="form-group has-errors text-danger small">
+                        {{field.errors}}
+                    </div>
+                    <div class="form-group has-errors text-danger small">
+                    </div>
+                    <div class="form-group">
+                      {{ field.label_tag }}<br>
+                        {{field}}
+                    </div>
+                    {% endfor %}
+                    <button class="btn btn-primary" type="submit" style="width:30%">Upload</button>
+            </div>
+            </form>
+        </div>
+{% endblock %}
+<!--<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+  <p><a href="{% url 'home' %}">Return to home</a></p>

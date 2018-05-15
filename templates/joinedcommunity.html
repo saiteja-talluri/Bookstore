@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+<h2>joined communities</h2></center>
+{% for c in jcom %}
+	<div class="container">
+    Name of the community: <a href="{% url 'cpage' pk=c.pk %}">{{ c.name }}</a>
+    <a href="{% url 'leave' pk=c.pk %}">leave</a><br>
+    </div>
+{% endfor %}
+{% endblock %}

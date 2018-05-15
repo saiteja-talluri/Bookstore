@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+<h2>Other communities</h2></center>
+{% for c,l in jpclist %}
+
+	<div class="container">
+    {% if not c in jcom %}
+    Name of the community: {{ c.name }}<br>
+    Description: {{c.description}}<br>
+    {% if user in l %}
+    <a class="button" href="{% url 'crequest' pk=c.pk %}">cancelrequest</a><br>
+    {% else %}
+    <a class="button" href="{% url 'srequest' pk=c.pk %}">join</a><br>
+    {% endif %}
+    
+    {% endif %}
+    </div>
+{% endfor %}
+
+
+{% endblock %}

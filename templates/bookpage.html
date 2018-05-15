@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center" style="padding-top: 30px;padding-left: 40px;">
+    <h1 style="font-size:40px;font-family:Pacifico;padding-right: 80%">{{doc.title }}</h1>
+    <hr style="background:#F87431; border:0; height:3px" />
+        <p style="font-family: 'Poiret One';font-size:30px;font-style:cursive;margin-left:-70%"><em>Written by {{doc.author}} </em></p>
+    <br>
+  <div>
+        <img src="{{doc.image.url}}" alt="" style="width:250px;height:250px;margin-left:-70%;margin-bottom:20px"><br>
+        <h1 style="font-size:30px;font-family:Pacifico;padding-right: 80%">Book Catalogue</h1>
+        <hr style="background:#F87431; border:0; height:1px;padding-right: 80%" />
+        <p style="font-family: 'Poiret One';font-size:25px;font-style:cursive;"><em>
+          Title: <a href="{% url 'bookpage' pk=doc.pk %}">{{doc.title }}</a><br>
+          Author: <a href="{% url 'author' pk=doc.author %}">{{doc.author}}</a><br>
+          Genre: <a href="{% url 'genre' pk=doc.genre %}">{{doc.genre}}</a><br>
+          Uploader: <a href="{% url 'uploader' pk=doc.uploader %}">{{doc.uploader}}</a>
+        </em></p>
+
+        <h1 style="font-size:30px;font-family:Pacifico;padding-right: 80%">Book Privacy</h1>
+        <hr style="background:#F87431; border:0; height:1px;padding-right: 80%" />
+        <p style="font-family: 'Poiret One';font-size:25px;font-style:cursive;"><em>
+          {% if doc.public and doc.user == user %}
+        <p style="font-family: 'Poiret One';font-size:24px;font-style:cursive;">You have uploaded this book and you can feel free to change privacy<br><br>
+        <a class="button" href="{{doc.document.url}}">read</a><br><br>
+        Privacy : Public  <a href="{% url 'change' pk=doc.pk %}" class="button">Change</a><br>
+        {% elif doc.user == user %}
+        <p style="font-family: 'Poiret One';font-size:24px;font-style:cursive;">You have uploaded this book and you can feel free to change privacy<br><br>
+        <a class="button" href="{{doc.document.url}}">read</a><br><br>
+        Privacy : Private <a  class="button" href="{% url 'change' pk=doc.pk %}">Change</a><br>
+        {%elif user in mlist %}
+        <p style="font-family: 'Poiret One';font-size:24px;font-style:cursive;">You were granted access by the uploader and you can proceed to read the book.<br><br>
+        <a href="{{doc.document.url}}" class="button">read</a><br>
+        </p>
+        {% elif doc.public %}
+        <p style="font-family: 'Poiret One';font-size:24px;font-style:cursive;">The document is public and you can proceed to read the book.<br><br>
+        <a  class="button" href="{{doc.document.url}}">read</a><br>
+        </p>
+        {% else %}
+        <p style="font-family: 'Poiret One';font-size:24px;font-style:cursive;"> You cannot read this book as it is private, You have to take the permission of the Uploader<br><br>
+            {% if user in rplist %}
+            <a class="button" href="{% url 'cprequest' pk=doc.pk %}">Cancel Request</a><br><br>
+            {% else %}
+            <a class="button" href="{% url 'prequest' pk=doc.pk %}">Send Request</a><br><br>
+            {% endif %}
+            <a class="button" href="http://127.0.0.1:8000/chat/dialogs/{{doc.user.username}}">Chat with Uploader</a><br>
+        </p>
+        {% endif %}
+        </em></p>
+
+<h1 style="font-size:30px;font-family:Pacifico;padding-right: 80%"">Viewers Rating</h1>
+    <hr style="background:#F87431; border:0; height:1px" />
+    <br>
+<p style="font-family: 'Poiret One';font-size:25px;font-style:cursive;"><em>
+        Average Rating: {{r1}}<br> 
+        Number of ratings : {{t}}</em></p>
+  </div>
+
+<h1 style="font-size:30px;font-family:Pacifico;padding-right: 80%">Wanna Rate?</h1>
+    <hr style="background:#F87431; border:0; height:1px;padding-right: 80%" />
+    <br>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+<h1 style="font-size:30px;font-family:Pacifico;padding-right: 80%"">Your Rating</h1>
+    <hr style="background:#F87431; border:0; height:1px" />
+    <br>
+<p style="font-family: 'Poiret One';font-size:25px;font-style:cursive;"><em>You rated the book {{doc.title }} written by {{doc.author }}, a rating of {{r.rating}} out of 5 stars</em></p>
+</div>
+
+{% endblock %}

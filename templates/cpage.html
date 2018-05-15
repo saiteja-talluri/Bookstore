@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+admin: {{com.admin.username}}<br>
+<h2>Members</h2>
+  {% for m in mlist %}
+  {{m.username}}
+  {% endfor %}
+
+{% if user == com.admin %}
+<h2>Join requests</h2>
+{% for u in jplist %}
+  name: <a href="{% url 'uploader' pk=u.username %}">{{u.username}}</a>
+    <a href="{% url 'accept' pk=u.pk name=com.name %}">accept</a><br>
+{% endfor %}
+
+{% endif %}
+<br>
+<a href="{% url 'upfileinc' pk=com.pk %}">upfile</a><br>
+<h2>Uploaded Documents</h2>
+  {% for doc in docs %}
+  <div>
+        <p>
+        <img src="{{doc.image.url}}" alt="" style="width:100px;height:100px;"><br>
+          author: <a href="{% url 'author' pk=doc.author %}">{{doc.author}}</a><br>
+          genre: <a href="{% url 'genre' pk=doc.genre %}">{{doc.genre}}</a><br>
+          title: <a href="{% url 'bookpage' pk=doc.pk %}">{{doc.title }}</a><br>
+          uploader: <a href="{% url 'uploader' pk=doc.uploader %}">{{doc.uploader}}</a>
+        </p>
+  </div>
+  {% endfor %}
+
+<p><a href="{% url 'home' %}">Return to home</a></p>
+{% endblock %}

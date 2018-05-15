@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="menu">
+<ul>
+  {% for object in docs %}
+    <li>
+          <img src="{{object.image.url}}" alt="" style="width:100px;height:100px;"><br>
+          author: <a href="{% url 'author' pk=object.author %}">{{object.author}}</a><br>
+          genre: <a href="{% url 'genre' pk=object.genre %}">{{object.genre}}</a><br>
+          title: <a href="{% url 'bookpage' pk=object.pk %}">{{ object.title }}</a><br>
+          rating: {{object.rate1}}<br>
+          no of ratings: {{object.no_ratings}}<br>
+    </li>
+  {% endfor %}
+</ul>
+</div>
+{% if s == 0 %}
+<a href="{% url 'follow' pk=pk %}">Follow</a> 
+{% else %}
+<a href="{% url 'unfollow' pk=pk %}">unFollow</a> 
+{% endif %}
+{% endblock %}

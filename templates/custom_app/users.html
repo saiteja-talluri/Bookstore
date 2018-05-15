@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container"><center>
+    <h1>ALL CHAT HEADS</h1></center>
+    <div class="container">
+        {% for user in object_list %}
+            {% if user != request.user %}
+                
+                <a href="{% url 'dialogs_detail' user.username %}" class="btn btn-primary">
+                    Chat with {{ user.username }}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
