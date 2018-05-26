@@ -48,7 +48,7 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
 ## SOFTWARE ​REQUIREMENTS
 
 ```
-- Front end ​- ​Basic web ​designing
+- Front end - ​Basic web ​designing
      1. HTML
      2. CSS
      3. BOOTSTRAP
@@ -75,7 +75,7 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
 ● Used​ ​HTML,​ ​CSS​ ​and​ ​Bootstrap​ ​to​ ​create​ ​the​ ​front​ ​end​ ​of​ ​the​ ​website.
 ```
 
-## FEATURES (Promised) ​​ ​​ :
+## FEATURES 
 
 ```
 1. Login
@@ -86,29 +86,30 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
 6. Chat​ ​with​ ​uploader
 7. Community
 8. Follow​ ​people
-9. Checking​ ​copyrights
 ```
 
-**LOGIN** ​​ ​ **:**
+**LOGIN** ​​**:**
 Users​ ​can​ ​login​ ​through​ ​their​ ​username​ ​and​ ​password.
+
 **REGISTER** ​ ​ **:**
 Users​ ​can​ ​​ ​register​ ​by​ ​providing​ ​their​ ​personal​ ​details​ ​which​ ​include​ ​their
 favourite​ ​authors​ ​and​ ​their​ ​interests.
+
 **SEARCH** ​ ​ **BY** ​ ​ **GENRE** ​ ​ **,** ​ ​ **AUTHOR,** ​ ​ **TITLE** ​ ​ **:**
 Users​ ​can​ ​search​ ​by​ ​genre,​ ​author,​ ​title.
+
 **RATE** ​ ​ **/** ​ ​ **REVIEW** ​ ​ **:**
 Users​ ​can​ ​rate​ ​and​ ​review​ ​the​ ​books/materials​ ​that​ ​are​ ​up​ ​on​ ​​ ​the
 website.
+
 **UPLOAD** ​ ​ **:**
 a. Users​ ​can​ ​upload​ ​books​ ​(provided​ ​there​ ​is​ ​no​ ​problem​ ​with​ ​copyrights​ ​of
 the​ ​book)​ ​and​ ​materials​ ​related​ ​to​ ​a​ ​particular​ ​community
 b. Users​ ​can​ ​upload​ ​the​ ​preview​ ​of​ ​the​ ​hardcopy​ ​they​ ​have​ ​with​ ​them​ ​(which
 they​ ​are​ ​willing​ ​to​ ​lend)
-c. we​ ​check​ ​the​ ​page​ ​next​ ​to​ ​title​ ​page​ ​whether​ ​it​ ​has​ ​copyright​ ​issues​ ​or
-not​ ​by​ ​scanning​ ​it.
 
 
-#### CHAT ​ ​ WITH ​ ​ UPLOADER ​ ​ :
+#### CHAT WITH UPLOADER ​ ​ :
 
 ```
 Users​ ​can​ ​personally​ ​chat​ ​with​ ​the​ ​uploaders​ ​about​ ​a​ ​book​ ​and​ ​discuss​ ​their​ ​views
@@ -122,46 +123,6 @@ FOLLOW ​ ​ PEOPLE ​ ​ :
 Users​ ​can​ ​follow​ ​an​ ​individual​ ​so​ ​that​ ​when​ ​he​ ​or​ ​she​ ​uploads​ ​and
 book​ ​they​ ​​ ​get​ ​a​ ​notification.
 ```
-## FEATURES (Completed) ​​ ​​ :
-
-1. Login
-2. Register
-3. Search​ ​by​ ​genre,​ ​author,​ ​title
-4. Rate/Review
-5. Upload
-6. Chat​ ​with​ ​uploader
-7. Community
-8. Follow​ ​people
-    We​ ​had​ ​successfully​​ ​​implemented​ ​almost​ ​all​ ​the​ ​features​ ​except​ ​that​ ​we​ ​are​ ​not​ ​able​ ​to
-    scan​ ​the​ ​document​ ​for​ ​checking​ ​copyrights​ ​as​ ​we​ ​didn’t​ ​get​ ​any​ ​tool​ ​to​ ​scan​ ​a​ ​document
-
-
-#### LOGIN ​​ ​ :
-
-Users​ ​can​ ​login​ ​through​ ​their​ ​username​ ​and​ ​password.
-**REGISTER** ​ ​ **:**
-Users​ ​can​ ​​ ​register​ ​by​ ​providing​ ​their​ ​personal​ ​details​ ​and​ ​select​ ​their​ ​interests​ ​in
-​ ​settings.
-**SEARCH** ​ ​ **BY** ​ ​ **GENRE** ​ ​ **,** ​ ​ **AUTHOR,** ​ ​ **TITLE** ​ ​ **:**
-Users​ ​can​ ​search​ ​by​ ​genre,​ ​author,​ ​title.
-**RATE** ​ ​ **/** ​ ​ **REVIEW** ​ ​ **:**
-Users​ ​can​ ​rate​ ​and​ ​review​ ​the​ ​books/materials​ ​that​ ​are​ ​up​ ​on​ ​​ ​the
-Website.
-**UPLOAD** ​ ​ **:**
-d. Users​ ​can​ ​upload​ ​books​ ​and​ ​materials​ ​related​ ​to​ ​a​ ​particular​ ​community
-e. Users​ ​can​ ​upload​ ​the​ ​preview​ ​of​ ​the​ ​hardcopy​ ​they​ ​have​ ​with​ ​them​ ​(which
-they​ ​are​ ​willing​ ​to​ ​lend)
-**CHAT** ​ ​ **WITH** ​ ​ **UPLOADER** ​ ​ **:**
-Users​ ​can​ ​personally​ ​chat​ ​with​ ​the​ ​uploaders​ ​about​ ​a​ ​book​ ​and​ ​discuss​ ​their​ ​views
-or​ ​make​ ​a​ ​deal​ ​to​ ​borrow​ ​the​ ​book​ ​(provided​ ​uploader​ ​have​ ​a​ ​hard​ ​copy)
-**COMMUNITY** ​ ​ **:**
-● Users​ ​can​ ​form​ ​a​ ​community​ ​based​ ​on​ ​interests​ ​,courses​ ​they​ ​have​ ​taken,​ ​institute
-they​ ​belong​ ​to,etc.
-● Users​ ​can​ ​upload​ ​materials​ ​related​ ​to​ ​the​ ​members​ ​of​ ​the​ ​community.
-● Content​ ​can​ ​be​ ​accessed​ ​only​ ​by​ ​members​ ​of​ ​community.
-**FOLLOW** ​ ​ **PEOPLE** ​ ​ **:**
-Users​ ​can​ ​follow​ ​an​ ​individual​ ​so​ ​that​ ​when​ ​he​ ​or​ ​she​ ​uploads​ ​and
-book​ ​they​ ​​ ​get​ ​a​ ​notification.
 
 
 ## CITATIONS
@@ -176,20 +137,20 @@ book​ ​they​ ​​ ​get​ ​a​ ​notification.
 
  3. Used​ ​for​ ​understanding​ ​Inbuilt​ ​authentication​ ​System
 
-   https://simpleisbetterthancomplex.com/tutorial/2016/06/27/how-to-use-djangos-built-in-login-system.html
+    https://simpleisbetterthancomplex.com/tutorial/2016/06/27/how-to-use-djangos-built-in-login-system.html
 
  4. Used​ ​for​ ​understanding​ ​how​ ​django​ ​works​ ​.​ ​Learned​ ​Basic​ ​Django from​ ​this​ ​site
 
-   https://tutorial.djangogirls.org/en/
+    https://tutorial.djangogirls.org/en/
 
  5. Used​ ​for​ ​learning​ ​the​ ​way​ ​to​ ​extend​ ​a​ ​model​ ​to​ ​another​ ​model
 
-  https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
+    https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
 
  6. Used​ ​for​ ​learning​ ​about​ ​Many​ ​to​ ​Many​ ​relationships​ ​in​ ​django
 
-   https://www.youtube.com/watch?v=nwpLCa79DUw
+    https://www.youtube.com/watch?v=nwpLCa79DUw
 
  7. Used​ ​for​ ​implemeting​ ​Forgot​ ​Password
 
-   https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html
+    https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html
