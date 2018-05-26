@@ -2,28 +2,32 @@
 
 ### The​ ​Brogrammers
 
-Saiteja​ ​Nangunoori​ ​​ ​-​ ​ 160050089 
-Sathvik​ ​Kollu​ ​Reddy​ ​-​ ​ 160050077 
-Saiteja​ ​Talluri​ ​-​ ​​ ​ 160050098 
+- Saiteja​ ​Talluri​ ​-​ ​​ ​ 160050098 
+- Saiteja​ ​Nangunoori​ ​​ ​-​ ​ 160050089 
+- Sathvik​ ​Kollu​ ​Reddy​ ​-​ ​ 160050077 
 
 ## ABSTRACT
 
-We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ ​as​ ​a​ ​bookstore​ ​for​ ​reading​ ​and​ ​lending​ ​manuals,journals​ ​and​ ​books.
+We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ ​as​ ​a​ ​bookstore​ ​for​ ​reading​ ​and​ ​lending​ ​manuals, journals​ ​and​ ​books.
 
 ```
-● Every​ ​user​ ​can​ ​read,rate​ ​and​ ​review​ ​the​ ​books.
-● User​ ​can​ ​not​ ​only​ ​read​ ​but​ ​can​ ​also​ ​upload/advertise​ ​his​ ​own​ ​books​ ​or​ ​materials.
+● Every​ ​user​ ​can​ ​read, rate​ ​and​ ​review​ ​the​ ​books.
+● User​s ​can​ ​not​ ​only​ ​read​ ​but​ ​can​ ​also​ ​upload/advertise​ ​his​ ​own​ ​books​ ​or​ ​materials.
 ● Users​ ​can​ ​follow​ ​uploaders​ ​and​ ​also​ ​chat​ ​with​ ​them​ ​via​ ​a​ ​simple​ ​chat​ ​box.
-● Group​ ​of​ ​users​ ​can​ ​also​ ​form​ ​a​ ​community​ ​depending​ ​on​ ​their​ ​interests.​ ​
-  The​ ​materials shared​ ​in​ ​the​ ​community​ ​are​ ​accessible​ ​to​ ​everyone​ ​in​ ​it.
+● Group​ ​of​ ​users​ ​can​ ​also​ ​form​ ​a​ ​community​ ​depending​ ​on​ ​their​ ​interests.​ ​The​ ​materials shared​ ​in​ ​the​
+  community​ ​are​ ​accessible​ ​to​ ​everyone​ ​in​ ​it.
 ```
 
 ## MOTIVATION
 
 ```
-● Many​ ​of​ ​us​ ​would​ ​have​ ​faced​ ​the​ ​problem​ ​at​ ​some​ ​point​ ​or​ ​the​ ​other​ ​to​ ​find​ ​whether someone​ ​in​ ​our​ ​friends​ ​or​ ​classmates​ ​had​ ​a​ ​hard​ ​copy​ ​of​ ​our​ ​favourite​ ​novel/comic​ ​and are​ ​willing​ ​to​ ​lend​ ​the​ ​book.
-● So​ ​we​ ​thought​ ​of​ ​creating​ ​a​ ​website​ ​that​ ​enables​ ​the​ ​users​ ​to​ ​​ ​know​ ​the​ ​owner​ ​of​ ​​ ​a​ ​hard copy​ ​for​ ​the​ ​book​ ​they​ ​are​ ​searching​ ​for​ ​and​ ​can​ ​also​ ​chat​ ​with​ ​the​ ​owner​ ​through​ ​a simple​ ​chat​ ​interface​ ​and​ ​borrow​ ​the​ ​book​ ​from​ ​him​ ​for​ ​a​ ​week/month.
-● We​ ​also​ ​face​ ​many​ ​problems​ ​while​ ​collecting​ ​the​ ​reference​ ​materials​ ​or​ ​​ ​class​ ​notes related​ ​to​ ​the​ ​courses​ ​at​ ​the​ ​start​ ​or​ ​at​ ​the​ ​time​ ​of​ ​exams,​ ​so​ ​we​ ​wanted​ ​to​ ​create​ ​a website​ ​​ ​that​ ​can​ ​help​ ​peers​ ​by​ ​preserving​ ​​ ​the​ ​material​ ​which​ ​was​ ​uploaded​ ​by​ ​the seniors​ ​or​ ​professors​ ​over​ ​years​ ​in​ ​a​ ​community​ ​and​ ​accessible​ ​to​ ​only​ ​members​ ​of​ ​that community.
+● Many​ ​of​ ​us​ ​would​ ​have​ ​faced​ ​the​ ​problem​ ​at​ ​some​ ​point​ ​or​ ​the​ ​other​ ​to​ ​find​ ​whether someone​ ​in​ ​our​ ​
+  friends​ ​or​ ​classmates​ ​had​ ​a​ ​hard​ ​copy​ ​of​ ​our​ ​favourite​ ​novel/comic​ ​and are​ ​willing​ ​to​ ​lend​ ​the​ ​book.
+● So​ ​we​ ​thought​ ​of​ ​creating​ ​a​ ​website​ ​that​ ​enables​ ​the​ ​users​ ​to​ ​​ ​know​ ​the​ ​owner​ ​of​ ​​ ​a​ ​hard copy​ ​for​ ​
+  the​ ​book​ ​they​ ​are​ ​searching​ ​for​ ​and​ ​can​ ​also​ ​chat​ ​with​ ​the​ ​owner​ ​through​ ​a simple​ ​chat​ ​interface​ ​and​ ​
+  borrow​ ​the​ ​book​ ​from​ ​him​ ​for​ ​a​ ​week/month.
+● We​ ​also​ ​face​ ​many​ ​problems​ ​while​ ​collecting​ ​the​ ​reference​ ​materials​ ​or​ ​​ ​class​ ​notes related​ ​to​ ​the​ ​
+  courses​ ​at​ ​the​ ​start​ ​or​ ​at​ ​the​ ​time​ ​of​ ​exams,​ ​so​ ​we​ ​wanted​ ​to​ ​create​ ​a website​ ​​ ​that​ ​can​ ​help​ ​peers​ ​by​ ​preserving​ ​​ ​the​ ​material​ ​which​ ​was​ ​uploaded​ ​by​ ​the seniors​ ​or​ ​professors​ ​over​ ​years​ ​in​ ​a​ ​community​ ​and​ ​accessible​ ​to​ ​only​ ​members​ ​of​ ​that community.
 ```
 
 ## PROBLEM ​STATEMENT
@@ -32,8 +36,10 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
 ```
 ● Creating​ ​a​ ​web​ ​application​ ​where​ ​you​ ​can​ ​read/rate/review/upload books/materials/journals.
 ● Implementing​ ​database​ ​searches​ ​so​ ​that​ ​users​ ​can​ ​search​ ​books​ ​by​ ​genre/authors.
-● The​ ​site​ ​should​ ​also​ ​notify/suggest​ ​the​ ​user​ ​whenever​ ​a​ ​new​ ​material​ ​of​ ​his​ ​interest​ ​is uploaded​ ​​ ​in​ ​the​ ​site.
-● It​ ​should​ ​have​ ​the​ ​feature​ ​of​ ​forming​ ​groups/communities​ ​such​ ​that​ ​the​ ​materials uploaded​ ​in​ ​the​ ​group​ ​are​ ​accessible​ ​only​ ​to​ ​the​ ​members​ ​of​ ​the​ ​group.
+● The​ ​website​ ​should​ ​also​ ​notify/suggest​ ​the​ ​user​ ​whenever​ ​a​ ​new​ ​material​ ​of​ ​his​ ​interest​ ​is uploaded 
+  in​ the​ ​site.
+● It​ ​should​ ​have​ ​the​ ​feature​ ​of​ ​forming​ ​groups/communities​ ​such​ ​that​ ​the​ ​materials uploaded​ ​in​ ​the​ ​
+  group​ ​are​ ​accessible​ ​only​ ​to​ ​the​ ​members​ ​of​ ​the​ ​group.
 ● Creating​ ​chat​ ​boxes​ ​so​ ​that​ ​users​ ​can​ ​communicate​ ​with​ ​uploaders​ ​and​ ​borrow​ ​books from​ ​them.
 ```
 
