@@ -48,17 +48,17 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
 ## SOFTWARE ​REQUIREMENTS
 
 ```
-- Front end - ​Basic web ​designing
-     1. HTML
-     2. CSS
-     3. BOOTSTRAP
-     4. JAVASCRIPT
-- Backend
+ Front end - ​Basic web ​designing
+     1. Html
+     2. Css
+     3. Bootstrap
+     4. Javascript
+ Backend
 ​ ​​ ​​ ​​ ​​ ​​5.​ ​​ ​Django
-- Documentation
+ Documentation
 ​ ​​ ​​ ​​ ​​ ​​6.​ ​​ ​Latex
 ​ ​​ ​​ ​​ ​​ ​7.​ ​​ ​Doxygen
-- For version ​ control
+ For version ​ control
 ​ ​​ ​​ ​​ ​​ ​8.​ ​​ ​Git
 ```
 
@@ -86,42 +86,6 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
 6. Chat​ ​with​ ​uploader
 7. Community
 8. Follow​ ​people
-```
-
-**LOGIN** ​​**:**
-Users​ ​can​ ​login​ ​through​ ​their​ ​username​ ​and​ ​password.
-
-**REGISTER** ​ ​ **:**
-Users​ ​can​ ​​ ​register​ ​by​ ​providing​ ​their​ ​personal​ ​details​ ​which​ ​include​ ​their
-favourite​ ​authors​ ​and​ ​their​ ​interests.
-
-**SEARCH** ​ ​ **BY** ​ ​ **GENRE** ​ ​ **,** ​ ​ **AUTHOR,** ​ ​ **TITLE** ​ ​ **:**
-Users​ ​can​ ​search​ ​by​ ​genre,​ ​author,​ ​title.
-
-**RATE** ​ ​ **/** ​ ​ **REVIEW** ​ ​ **:**
-Users​ ​can​ ​rate​ ​and​ ​review​ ​the​ ​books/materials​ ​that​ ​are​ ​up​ ​on​ ​​ ​the
-website.
-
-**UPLOAD** ​ ​ **:**
-a. Users​ ​can​ ​upload​ ​books​ ​(provided​ ​there​ ​is​ ​no​ ​problem​ ​with​ ​copyrights​ ​of
-the​ ​book)​ ​and​ ​materials​ ​related​ ​to​ ​a​ ​particular​ ​community
-b. Users​ ​can​ ​upload​ ​the​ ​preview​ ​of​ ​the​ ​hardcopy​ ​they​ ​have​ ​with​ ​them​ ​(which
-they​ ​are​ ​willing​ ​to​ ​lend)
-
-
-#### CHAT WITH UPLOADER ​ ​ :
-
-```
-Users​ ​can​ ​personally​ ​chat​ ​with​ ​the​ ​uploaders​ ​about​ ​a​ ​book​ ​and​ ​discuss​ ​their​ ​views
-or​ ​make​ ​a​ ​deal​ ​to​ ​borrow​ ​the​ ​book​ ​(provided​ ​uploader​ ​have​ ​a​ ​hard​ ​copy)
-COMMUNITY ​ ​ :
-● Users​ ​can​ ​form​ ​a​ ​community​ ​based​ ​on​ ​interests​ ​,courses​ ​they​ ​have​ ​taken,​ ​institute
-they​ ​belong​ ​to,etc.
-● Users​ ​can​ ​upload​ ​materials​ ​related​ ​to​ ​the​ ​members​ ​of​ ​the​ ​community.
-● Content​ ​can​ ​be​ ​accessed​ ​only​ ​by​ ​members​ ​of​ ​community.
-FOLLOW ​ ​ PEOPLE ​ ​ :
-Users​ ​can​ ​follow​ ​an​ ​individual​ ​so​ ​that​ ​when​ ​he​ ​or​ ​she​ ​uploads​ ​and
-book​ ​they​ ​​ ​get​ ​a​ ​notification.
 ```
 
 
