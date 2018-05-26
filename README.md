@@ -1,4 +1,4 @@
-# THE ​ ​ BOOKSTORE
+# THE ​BOOKSTORE
 
 ### The​ ​Brogrammers
 
@@ -27,7 +27,9 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
   the​ ​book​ ​they​ ​are​ ​searching​ ​for​ ​and​ ​can​ ​also​ ​chat​ ​with​ ​the​ ​owner​ ​through​ ​a simple​ ​chat​ ​interface​ ​and​ ​
   borrow​ ​the​ ​book​ ​from​ ​him​ ​for​ ​a​ ​week/month.
 ● We​ ​also​ ​face​ ​many​ ​problems​ ​while​ ​collecting​ ​the​ ​reference​ ​materials​ ​or​ ​​ ​class​ ​notes related​ ​to​ ​the​ ​
-  courses​ ​at​ ​the​ ​start​ ​or​ ​at​ ​the​ ​time​ ​of​ ​exams,​ ​so​ ​we​ ​wanted​ ​to​ ​create​ ​a website​ ​​ ​that​ ​can​ ​help​ ​peers​ ​by​ ​preserving​ ​​ ​the​ ​material​ ​which​ ​was​ ​uploaded​ ​by​ ​the seniors​ ​or​ ​professors​ ​over​ ​years​ ​in​ ​a​ ​community​ ​and​ ​accessible​ ​to​ ​only​ ​members​ ​of​ ​that community.
+  courses​ ​at​ ​the​ ​start​ ​or​ ​at​ ​the​ ​time​ ​of​ ​exams,​ ​so​ ​we​ ​wanted​ ​to​ ​create​ ​a website​ ​​ ​that​ ​can​ ​help​ ​peers​ ​
+  by​ ​preserving​ ​​ ​the​ ​material​ ​which​ ​was​ ​uploaded​ ​by​ ​the seniors​ ​or​ ​professors​ ​over​ ​years​ ​in​ ​a​ ​
+  community​ ​and​ ​accessible​ ​to​ ​only​ ​members​ ​of​ ​that community.
 ```
 
 ## PROBLEM ​STATEMENT
@@ -43,27 +45,28 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
 ● Creating​ ​chat​ ​boxes​ ​so​ ​that​ ​users​ ​can​ ​communicate​ ​with​ ​uploaders​ ​and​ ​borrow​ ​books from​ ​them.
 ```
 
-## SOFTWARE ​ ​ REQUIREMENTS
+## SOFTWARE ​REQUIREMENTS
 
 ```
-*Front ​ ​ end ​ ​ - ​ ​ Basic ​ ​ web ​ ​ designing*
+- Front end ​- ​Basic web ​designing
      1. HTML
      2. CSS
      3. BOOTSTRAP
      4. JAVASCRIPT
-*Backend*
+- Backend
 ​ ​​ ​​ ​​ ​​ ​​5.​ ​​ ​Django
-*Documentation*
+- Documentation
 ​ ​​ ​​ ​​ ​​ ​​6.​ ​​ ​Latex
 ​ ​​ ​​ ​​ ​​ ​7.​ ​​ ​Doxygen
-*For version ​ control*
+- For version ​ control
 ​ ​​ ​​ ​​ ​​ ​8.​ ​​ ​Git
 ```
 
 ## IMPLEMENTATION
 
 ```
-● Used​ ​Django​ ​Models​ ​to​ ​make​ ​suitable​ ​classes​ ​to​ ​represent​ ​objects​ ​such​ ​as​ ​Profile, Document, Community,​ ​Advertise,​ ​Join​ ​etc.
+● Used​ ​Django​ ​Models​ ​to​ ​make​ ​suitable​ ​classes​ ​to​ ​represent​ ​objects​ ​such​ ​as​ ​Profile, Document, 
+  Community,​ ​Advertise,​ ​Join​ ​etc.
 ● Used​ ​Django​ ​ModelForms​ ​to​ ​generate​ ​forms​ ​to​ ​edit​ ​models.
 ● Used​ ​Django​ ​Authentication​ ​System​ ​to​ ​authenticate​ ​users​ ​in​ ​the​ ​login​ ​page.
 ● Used​ ​Django-Filters​ ​to​ ​implement​ ​searching​ ​of​ ​Documents​ ​​ ​and​ ​Ads
@@ -72,7 +75,7 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
 ● Used​ ​HTML,​ ​CSS​ ​and​ ​Bootstrap​ ​to​ ​create​ ​the​ ​front​ ​end​ ​of​ ​the​ ​website.
 ```
 
-## FEATURES ​ ​ (Promised) ​​ ​​ :
+## FEATURES (Promised) ​​ ​​ :
 
 ```
 1. Login
@@ -119,7 +122,7 @@ FOLLOW ​ ​ PEOPLE ​ ​ :
 Users​ ​can​ ​follow​ ​an​ ​individual​ ​so​ ​that​ ​when​ ​he​ ​or​ ​she​ ​uploads​ ​and
 book​ ​they​ ​​ ​get​ ​a​ ​notification.
 ```
-## FEATURES ​ ​ (Completed) ​​ ​​ :
+## FEATURES (Completed) ​​ ​​ :
 
 1. Login
 2. Register
