@@ -62,6 +62,37 @@ We​ ​built​ ​an​ ​online​ ​website​ ​which​ ​serves​ �
 ​ ​​ ​​ ​​ ​​ ​8.​ ​​ ​Git
 ```
 
+## GETTING ​STARTED
+
+1. Install the package:
+
+Clone the github repository [https://github.com/saiteja-talluri/Bookstore.git](https://github.com/saiteja-talluri/Bookstore.git) using
+```
+git clone https://github.com/saiteja-talluri/Bookstore.git
+```
+2. Activate Virtual Environment: Navigate to the folder containing the package. Run the following command to activate 
+the virtual environment
+
+```
+source myvenv/bin/activate
+```
+3. Install dependencies: Navigate to the folder containing the package. Run the following command to install the 
+dependencies required (this may require root priveleges):
+
+```
+pip3 install -r requirements.txt
+```
+Alternatively, check the dependencies which are listed inrequirements.txtand install them
+manually.
+
+4. Running the servers: There are two servers which need to be run parallel in two terminals, one for the web and
+other for the chat. Run the following commands one on each terminal.
+
+```
+python3 manage.py runserver
+python3 manage.py run_chat_server
+```
+
 ## IMPLEMENTATION
 
 ```
