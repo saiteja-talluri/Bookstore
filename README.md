@@ -4,14 +4,14 @@
 
 A detailed presentation of the project can be found as [report.pdf](src/presentation.pdf) and the user documentation is available at [documentation.pdf](src/user_documentation.pdf). It was made as the final project for CS 251 - **Software Systems Lab** course in Autumn 2017 at Indian Institute of Technology (IIT) Bombay, India.
 
-## SOFTWARE REQUIREMENTS
+## Software Requirements
 ```
  Web Design - HTML, CSS, Bootstrap and Javascript
  Backend - Django
  Documentation - Latex, Doxygen
  ```
 
-## GETTING STARTED
+## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
