@@ -2,7 +2,7 @@
 
 > This project implements an online website which serves as a bookstore for reading and lending books developed using Django. The application allows users to rate, review, upload books, form communities and chat with other users to exchange books.
 
-A detailed report of the project can be found as [report.pdf](src/Project Presentation.pdf). It was made as the final project for CS 251 - **Software Systems Lab** course in Autumn 2017 at Indian Institute of Technology (IIT) Bombay, India.
+A detailed presentation of the project can be found as [report.pdf](src/presentation.pdf) and the user documentation is available at [documentation.pdf](src/user_documentation.pdf). It was made as the final project for CS 251 - **Software Systems Lab** course in Autumn 2017 at Indian Institute of Technology (IIT) Bombay, India.
 
 ## SOFTWARE REQUIREMENTS
 ```
@@ -17,7 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Install the package:
 
-   Clone the github repository [https://github.com/saiteja-talluri/Bookstore.git](https://github.com/saiteja-talluri/Bookstore.git) using
+   Clone the github [repo](https://github.com/saiteja-talluri/Bookstore.git) using
 ```
 git clone https://github.com/saiteja-talluri/Bookstore.git
 ```
@@ -56,30 +56,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgements
 
- 1. Used for implementing Chat feature
-
-    https://github.com/Bearle/django-private-chat/tree/dev/example
-
- 2. Used​ ​for​ ​implementing​ ​Search​ ​feature
-
-    https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-querysets-dynamically.html
-
- 3. Used​ ​for​ ​understanding​ ​Inbuilt​ ​authentication​ ​System
-
-    https://simpleisbetterthancomplex.com/tutorial/2016/06/27/how-to-use-djangos-built-in-login-system.html
-
- 4. Used​ ​for​ ​understanding​ ​how​ ​django​ ​works​ ​.​ ​Learned​ ​Basic​ ​Django from​ ​this​ ​site
-
-    https://tutorial.djangogirls.org/en/
-
- 5. Used​ ​for​ ​learning​ ​the​ ​way​ ​to​ ​extend​ ​a​ ​model​ ​to​ ​another​ ​model
-
-    https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
-
- 6. Used​ ​for​ ​learning​ ​about​ ​Many​ ​to​ ​Many​ ​relationships​ ​in​ ​django
-
-    https://www.youtube.com/watch?v=nwpLCa79DUw
-
- 7. Used​ ​for​ ​implemeting​ ​Forgot​ ​Password
-
-    https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html
+-  Thanks to this excellent [repo](https://github.com/Bearle/django-private-chat/tree/dev/example) implementing the chat feature.
+-  Thanks to this amazing [blog](https://simpleisbetterthancomplex.com/tutorial/) for excellent tutorials on Django.
